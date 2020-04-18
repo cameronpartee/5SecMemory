@@ -2,18 +2,18 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State var totalTime = 2
+    @State var totalTime = 3
     @State var timerIsRunning = true
     @State var showResults = false
     
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
-    @State var quiz = Quiz(count: 8, isText: false, isAnimal: false, points: 0)
+    @State var quiz = Quiz(count: 4, isText: false, isAnimal: true, points: 0)
     
     var body: some View {
         NavigationView {
             VStack {
                 
-                Text("\(totalTime).00").bold().font(.system(size: 40)).padding(.top, 30).foregroundColor(Color.blue)
+                Text("\(totalTime).00").bold().font(.system(size: 60)).padding(.top, 30).foregroundColor(Color.blue)
                 
                 ForEach(0..<quiz.count) { index in
                     if(self.quiz.isText) {
@@ -42,7 +42,7 @@ struct ContentView: View {
                 }.hidden()
                 .onAppear() {
                     self.timerIsRunning = true
-                    self.totalTime = 2
+                    self.totalTime = 3
                 }
             }
         .navigationBarTitle("")
