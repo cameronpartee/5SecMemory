@@ -2,16 +2,12 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @State var totalTime = 10
+    @State var totalTime = 2
     @State var timerIsRunning = true
     @State var showResults = false
     
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
     @State var quiz = Quiz(count: 8, isText: false, isAnimal: false, points: 0)
-    
-    func incrementTimer() {
-        totalTime = 3
-    }
     
     var body: some View {
         NavigationView {
@@ -46,7 +42,7 @@ struct ContentView: View {
                 }.hidden()
                 .onAppear() {
                     self.timerIsRunning = true
-                    self.totalTime = 10
+                    self.totalTime = 2
                 }
             }
         .navigationBarTitle("")

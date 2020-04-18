@@ -6,12 +6,16 @@ struct ResultsView: View {
     @State var inputText = ""
     @State var rotateAmount = 0
     @State var showElements = false
+    @State var showStar = false
     @Environment(\.presentationMode) var presentationMode
+    
+    //@State var points = 0
     
     func getInputText() {
         let text = inputText
         let textArray = text.split(separator: " ")
-        quiz.computerScore(a: textArray, isAnimal: quiz.isAnimal)
+        quiz.computerScore(a: textArray, isAnimal: quiz.isAnimal, count: quiz.count)
+        //points = quiz.points
         print(quiz.points)
     }
     
@@ -21,6 +25,10 @@ struct ResultsView: View {
     
     func showUIElements() {
         showElements = true
+    }
+    
+    func calculateScore() {
+        
     }
     
     var body: some View {
@@ -44,6 +52,7 @@ struct ResultsView: View {
                 .border(Color.blue, width: 1)
                 .padding()
                 .onTapGesture {
+                    self.quiz.points = 0
                     self.presentationMode.wrappedValue.dismiss()
             }.opacity(showElements ? 1 : 0)
             
@@ -56,21 +65,23 @@ struct ResultsView: View {
                     .frame(width: 100, height: 100)
                     .rotationEffect(.degrees(Double(rotateAmount)))
                     .animation(Animation.easeInOut(duration: 1)
-                    .repeatForever(autoreverses: true))
+                        .repeatForever(autoreverses: true))
                 Image("Star")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100, height: 100)
                     .rotationEffect(.degrees(Double(rotateAmount)))
                     .animation(Animation.easeInOut(duration: 1)
-                    .repeatForever(autoreverses: true))
+                        .repeatForever(autoreverses: true))
+                    .opacity(quiz.points >= 20 ? 1 : 0)
                 Image("Star")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100, height: 100)
                     .rotationEffect(.degrees(Double(rotateAmount)))
                     .animation(Animation.easeInOut(duration: 1)
-                            .repeatForever(autoreverses: true))
+                        .repeatForever(autoreverses: true))
+                    .opacity(quiz.points >= 40 ? 1 : 0)
             }.opacity(showElements ? 1 : 0)
             
             VStack {
@@ -89,6 +100,7 @@ struct ResultsView: View {
                     .onTapGesture {
                         self.getInputText()
                 }.opacity(showElements ? 1 : 0)
+                
                 HStack {
                     Image("Star")
                         .resizable()
@@ -96,21 +108,24 @@ struct ResultsView: View {
                         .frame(width: 100, height: 100)
                         .rotationEffect(.degrees(Double(rotateAmount)))
                         .animation(Animation.easeInOut(duration: 1)
-                        .repeatForever(autoreverses: true))
+                            .repeatForever(autoreverses: true))
+                        .opacity(quiz.points >= 60 ? 1 : 0)
                     Image("Star")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 100)
                         .rotationEffect(.degrees(Double(rotateAmount)))
                         .animation(Animation.easeInOut(duration: 1)
-                        .repeatForever(autoreverses: true))
+                            .repeatForever(autoreverses: true))
+                        .opacity(quiz.points >= 80 ? 1 : 0)
                     Image("Star")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 100)
                         .rotationEffect(.degrees(Double(rotateAmount)))
                         .animation(Animation.easeInOut(duration: 1)
-                        .repeatForever(autoreverses: true))
+                            .repeatForever(autoreverses: true))
+                        .opacity(quiz.points >= 95 ? 1 : 0)
                 }.opacity(showElements ? 1 : 0)
             }.offset(y: -50)
             

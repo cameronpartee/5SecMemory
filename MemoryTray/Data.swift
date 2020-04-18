@@ -13,15 +13,15 @@ struct Quiz {
     var points: Int
     
     // LeetCode interview question
-    mutating func computerScore(a: [String.SubSequence], isAnimal: Bool) {
+    mutating func computerScore(a: [String.SubSequence], isAnimal: Bool, count: Int) {
         for i in a {
             if(isAnimal) {
-                if animals.contains(String(i)) {
-                    points += 5
+                if animals.contains(String(i.capitalized)) {
+                    points += Int(((1 / Double(count)) * 100.0))
                 }
             } else {
-                if foods.contains(String(i)) {
-                    points += 5
+                if foods.contains(String(i.capitalized)) {
+                    points += Int(((1 / Double(count)) * 100.0))
                 }
             }
         }
