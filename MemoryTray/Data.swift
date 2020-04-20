@@ -4,7 +4,6 @@ import Foundation
 struct Quiz {
 
     var count: Int
-    var isText: Bool
     var isAnimal: Bool
     
     var animals = ["Giraffe", "Cat", "Butterfly", "Dog", "Elephant", "Monkey", "Dove", "Cow"]

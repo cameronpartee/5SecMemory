@@ -1,58 +1,66 @@
 import SwiftUI
 
 struct ContentView: View {
-
-    @State var totalTime = 3
+    
+    @State var totalTime = 10
     @State var timerIsRunning = true
     @State var showResults = false
     
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
-    @State var quiz = Quiz(count: 4, isText: false, isAnimal: true, points: 0)
+    
+    @State var quiz = Quiz(count: 8, isAnimal: false, points: 0)
+    
+    func turnTimerOn() {
+        timerIsRunning = true
+    }
+    
+    func setTime() {
+        totalTime = 3
+    }
+    
+    func timerLogic() {
+        // if timer is running decrement it
+        if(totalTime > 0 && timerIsRunning) {
+            totalTime -= 1
+        } else {
+            // do action when timer ends
+            showResults = true
+        }
+    }
     
     var body: some View {
         NavigationView {
             VStack {
-                
-                Text("\(totalTime).00").bold().font(.system(size: 60)).padding(.top, 30).foregroundColor(Color.blue)
+                Text("\(totalTime).00")
+                    .bold()
+                    .font(.system(size: 60))
+                    .padding(.top, 30)
+                    .foregroundColor(Color.blue)
                 
                 ForEach(0..<quiz.count) { index in
-                    if(self.quiz.isText) {
-                        if(self.quiz.isAnimal) {
-                            Text("\(self.quiz.animals[index])")
-                        } else  {
-                            Text("\(self.quiz.foods[index])")
-                        }
-                    } else {
-                        if(self.quiz.isAnimal) {
-                            Image("\(self.quiz.animals[index])")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding(30)
-                        } else  {
-                            Image("\(self.quiz.foods[index])")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding()
-                        }
+                    if(self.quiz.isAnimal) {
+                        Image("\(self.quiz.animals[index])")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    } else  {
+                        Image("\(self.quiz.foods[index])")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
                     }
                 }
                 
                 NavigationLink(destination: ResultsView(quiz: self.$quiz), isActive: self.$showResults) {
-                  Text("")
+                    Text("")
                 }.hidden()
-                .onAppear() {
-                    self.timerIsRunning = true
-                    self.totalTime = 3
+                    .onAppear() {
+                        self.turnTimerOn()
+                        self.setTime()
                 }
             }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
         }.onReceive(timer) { _ in
-            if(self.totalTime > 0 && self.timerIsRunning) {
-                self.totalTime -= 1
-            } else {
-                self.showResults = true
-            }
+            self.timerLogic()
         }.border(Color.blue, width: 1)
     }
 }
