@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2A00C741244D22E000EE1DC6 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00C740244D22E000EE1DC6 /* StarView.swift */; };
+		2A00C745244D304400EE1DC6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00C744244D304400EE1DC6 /* OnboardingView.swift */; };
+		2A00C747244D314500EE1DC6 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A00C746244D314500EE1DC6 /* QuizView.swift */; };
 		2A2DC6DF2444F6F700C721E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DC6DE2444F6F700C721E4 /* AppDelegate.swift */; };
 		2A2DC6E12444F6F700C721E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DC6E02444F6F700C721E4 /* SceneDelegate.swift */; };
 		2A2DC6E32444F6F700C721E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DC6E22444F6F700C721E4 /* ContentView.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		2A00C740244D22E000EE1DC6 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		2A00C744244D304400EE1DC6 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		2A00C746244D314500EE1DC6 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		2A2DC6DB2444F6F700C721E4 /* MemoryTray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryTray.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2DC6DE2444F6F700C721E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A2DC6E02444F6F700C721E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				2A2DC6E02444F6F700C721E4 /* SceneDelegate.swift */,
 				2A2DC6F22444FA8E00C721E4 /* Data.swift */,
 				2A2DC6E22444F6F700C721E4 /* ContentView.swift */,
+				2A00C744244D304400EE1DC6 /* OnboardingView.swift */,
+				2A00C746244D314500EE1DC6 /* QuizView.swift */,
 				2A2DC6F42445252300C721E4 /* ResultsView.swift */,
 				2A00C740244D22E000EE1DC6 /* StarView.swift */,
 				2A2DC6E42444F6F900C721E4 /* Assets.xcassets */,
@@ -160,7 +166,9 @@
 				2A2DC6E32444F6F700C721E4 /* ContentView.swift in Sources */,
 				2A2DC6F52445252300C721E4 /* ResultsView.swift in Sources */,
 				2A00C741244D22E000EE1DC6 /* StarView.swift in Sources */,
+				2A00C747244D314500EE1DC6 /* QuizView.swift in Sources */,
 				2A2DC6F32444FA8E00C721E4 /* Data.swift in Sources */,
+				2A00C745244D304400EE1DC6 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
