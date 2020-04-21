@@ -1,15 +1,9 @@
 import SwiftUI
 
-struct Filter {
-    var timeFilter: Float
-    var countFilter: Float
-}
-
-
 struct FilterView: View {
     
-    @State private var filter = Filter(timeFilter: 10.0, countFilter: 10.0)
     @State var showResults = false
+    @Binding var filter: Filter
     
     var body: some View {
         GeometryReader { geometry in
@@ -33,7 +27,7 @@ struct FilterView: View {
                                 .foregroundColor(Color.blue)
                             Slider(value: self.$filter.countFilter, in: 3...14, step: 1)
                         }.padding(.leading, 30)
-                        .padding(.trailing, 30)
+                            .padding(.trailing, 30)
                     }
                     VStack(alignment: .center) {
                         Text("How long will it take you to memorize them?")
@@ -47,32 +41,32 @@ struct FilterView: View {
                                 .foregroundColor(Color.blue)
                             Slider(value: self.$filter.timeFilter, in: 3...20, step: 1)
                         }.padding(.leading, 30)
-                        .padding(.trailing, 30)
+                            .padding(.trailing, 30)
                     }
                 }
                 
-                NavigationLink(destination: QuizView()
+                NavigationLink(destination: QuizView(filter: self.$filter)
                     .navigationBarTitle("")
-                    .navigationBarHidden(true), isActive: self.$showResults) {
-                        Button(action: {
-                            self.showResults = true
-                        }) {
-                            HStack {
-                                Text("Continue")
-                                    .bold()
-                                    .font(.system(size: 25))
-                                Image(systemName: "chevron.right")
-                            }
-                            .padding(.horizontal)
-                            .padding()
-                            .background(Capsule().fill(Color.blue))
-                            .accentColor(Color.white)
+                    .navigationBarHidden(true)
+                ,isActive: self.$showResults) {
+                    Button(action: {
+                        self.showResults = true
+                    }) {
+                        HStack {
+                            Text("Continue")
+                                .bold()
+                                .font(.system(size: 25))
+                            Image(systemName: "chevron.right")
                         }
+                        .padding(.horizontal)
+                        .padding()
+                        .background(Capsule().fill(Color.blue))
+                        .accentColor(Color.white)
+                    }
                 }
-                
-                
             }
-            
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
         }
         .background(Color(0xd3995f))
         .border(Color(0x663603), width: 3)
@@ -81,6 +75,6 @@ struct FilterView: View {
 
 struct FilterView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterView()
+        FilterView(filter: .constant(Filter(timeFilter: 10.0, countFilter: 10.0)))
     }
 }

@@ -4,17 +4,18 @@ struct OnboardingView: View {
     
     @State private var step = 1
     @State var showResults = false
+    @Binding var filter: Filter
     
     var body: some View {
         ZStack {
             Color(0xd3995f).edgesIgnoringSafeArea(.all)
             VStack(spacing: 90) {
                 Image("icon")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 250, height: 250)
-                .padding()
-                .offset(y: 30)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 250, height: 250)
+                    .padding()
+                    .offset(y: 30)
                 
                 GeometryReader { gr in
                     HStack {
@@ -37,7 +38,7 @@ struct OnboardingView: View {
                         }.frame(width: gr.frame(in: .global).width)
                         
                         VStack(spacing: 40) {
-                            Text("Make sure to read the scoring break down to see where you fall on the memory scale.")
+                            Text("The goal is to get as close to 100 points as possible to have a perfect memory.")
                                 .bold()
                                 .padding()
                                 .foregroundColor(Color.black)
@@ -55,27 +56,27 @@ struct OnboardingView: View {
                     .animation(Animation.interpolatingSpring(stiffness: 40, damping: 8))
                 }
                 
-                NavigationLink(destination: FilterView()
+                NavigationLink(destination: FilterView(filter: $filter)
                     .navigationBarTitle("")
                     .navigationBarHidden(true), isActive: self.$showResults) {
-                    Button(action: {
-                        self.showResults = true
-                    }) {
-                        HStack {
-                            Text("Continue")
-                                .bold()
-                                .font(.system(size: 25))
-                            Image(systemName: "chevron.right")
+                        Button(action: {
+                            self.showResults = true
+                        }) {
+                            HStack {
+                                Text("Continue")
+                                    .bold()
+                                    .font(.system(size: 25))
+                                Image(systemName: "chevron.right")
+                            }
+                            .padding(.horizontal)
+                            .padding()
+                            .background(Capsule().fill(Color.blue))
+                            .accentColor(Color.white)
+                            .opacity(step == 3 ? 1 : 0)
+                            .animation(.none)
+                            .scaleEffect(step == 3 ? 1 : 0.01)
+                            .animation(Animation.interpolatingSpring(stiffness: 50, damping: 10, initialVelocity: 10))
                         }
-                        .padding(.horizontal)
-                        .padding()
-                        .background(Capsule().fill(Color.blue))
-                        .accentColor(Color.white)
-                        .opacity(step == 3 ? 1 : 0)
-                        .animation(.none)
-                        .scaleEffect(step == 3 ? 1 : 0.01)
-                        .animation(Animation.interpolatingSpring(stiffness: 50, damping: 10, initialVelocity: 10))
-                    }
                 }
                 
                 
@@ -111,6 +112,6 @@ struct OnboardingView: View {
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView()
+        OnboardingView(filter: .constant(Filter(timeFilter: 10.0, countFilter: 10.0)))
     }
 }

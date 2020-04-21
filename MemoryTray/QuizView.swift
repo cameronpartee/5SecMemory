@@ -2,21 +2,13 @@ import SwiftUI
 
 struct QuizView: View {
     
-    @State private var quiz = Quiz(time: 10, count: 14, points: 0)
+    @State private var quiz = Quiz(points: 0)
     @State private var totalTime = 5
     @State private var timerIsRunning = true
     @State private var showResults = false
+    @Binding var filter: Filter
     
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
-    
-    
-//    func turnTimerOn() {
-//        timerIsRunning = true
-//    }
-    
-//    func setTime() {
-//        totalTime = quiz.time
-//    }
     
     func timerLogic() {
         if(totalTime > 0 && timerIsRunning) {
@@ -29,11 +21,12 @@ struct QuizView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
+                
                 Text("\(self.totalTime).00")
                     .font(.system(size: 60))
                 HStack {
                     VStack {
-                        ForEach(0..<self.quiz.count) { index in
+                        ForEach(0..<Int(self.filter.countFilter)) { index in
                             if(index % 2 == 0) {
                                 Image("\(self.quiz.items[index])")
                                     .resizable()
@@ -43,7 +36,7 @@ struct QuizView: View {
                         }
                     }.padding(.trailing, 20)
                     VStack {
-                        ForEach(0..<self.quiz.count) { index in
+                        ForEach(0..<Int(self.filter.countFilter)) { index in
                             if(index % 2 == 1) {
                                 Image("\(self.quiz.items[index])")
                                     .resizable()
@@ -53,18 +46,17 @@ struct QuizView: View {
                         }
                     }.padding(.leading, 20)
                 }
-                
-                NavigationLink(destination: ResultsView(quiz: self.$quiz)
-                    .navigationBarTitle("")
-                    .navigationBarHidden(true), isActive: self.$showResults) {
-                        Text("")
+                NavigationLink(destination: ResultsView(quiz: self.$quiz, filter: self.$filter).navigationBarTitle("")
+                    .navigationBarHidden(true)
+                ,isActive: self.$showResults) {
+                    Text("")
                 }.hidden()
                     .onAppear() {
                         self.timerIsRunning = true
-                        self.totalTime = self.quiz.time
+                        self.totalTime = Int(self.filter.timeFilter)
                 }
-                
-            }.onReceive(self.timer) { _ in
+            }
+            .onReceive(self.timer) { _ in
                 self.timerLogic()
             }
             .navigationBarTitle("")
@@ -77,6 +69,6 @@ struct QuizView: View {
 
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizView()
+        QuizView(filter: .constant(Filter(timeFilter: 9.0, countFilter: 10.0)))
     }
 }
