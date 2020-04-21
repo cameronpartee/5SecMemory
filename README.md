@@ -1,6 +1,6 @@
 # The Memory Game
 
-🧠 Pictorial memory game application that measures ability to recall information
+🍉 Memory game application that measures ability to recall information
 
 # Features
 - Filter category
