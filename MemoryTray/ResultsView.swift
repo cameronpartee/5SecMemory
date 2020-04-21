@@ -17,7 +17,7 @@ struct ResultsView: View {
     func getInputText() {
         let text = inputText
         let textArray = text.split(separator: " ")
-        quiz.computerScore(a: textArray, isAnimal: quiz.isAnimal, count: quiz.count)
+        quiz.computerScore(a: textArray, count: quiz.count)
         print(quiz.points)
     }
     
@@ -94,6 +94,6 @@ struct ResultsView: View {
 
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultsView(quiz: .constant(Quiz(count: 4, isAnimal: true, points: 0)))
+        ResultsView(quiz: .constant(Quiz(time: 10, count: 4, points: 0)))
     }
 }

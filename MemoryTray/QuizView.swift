@@ -1,20 +1,21 @@
 import SwiftUI
 
 struct QuizView: View {
-    @State var totalTime = 10
-    @State var timerIsRunning = true
-    @State var showResults = false
+    
+    @State private var quiz = Quiz(time: 10, count: 14, points: 0)
+    @State private var totalTime = 3
+    @State private var timerIsRunning = true
+    @State private var showResults = false
     
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
     
-    @State var quiz = Quiz(count: 8, isAnimal: false, points: 0)
     
     func turnTimerOn() {
         timerIsRunning = true
     }
     
     func setTime() {
-        totalTime = 3
+        totalTime = quiz.time
     }
     
     func timerLogic() {
@@ -28,41 +29,53 @@ struct QuizView: View {
     }
     
     var body: some View {
-        NavigationView {
+        GeometryReader { geometry in
             VStack {
-                Text("\(totalTime).00")
-                    .bold()
+                Text("\(self.totalTime).00")
                     .font(.system(size: 60))
-                    .padding(.top, 30)
-                    .foregroundColor(Color.blue)
+                    .foregroundColor(Color.black)
                 
-                ForEach(0..<quiz.count) { index in
-                    if(self.quiz.isAnimal) {
-                        Image("\(self.quiz.animals[index])")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    } else  {
-                        Image("\(self.quiz.foods[index])")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    }
+                HStack {
+                    VStack {
+                        ForEach(0..<self.quiz.count) { index in
+                            if(index % 2 == 0) {
+                                Image("\(self.quiz.items[index])")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 110, height: 90)
+                            }
+                        }
+                    }.padding(.trailing, 20)
+                    VStack {
+                        ForEach(0..<self.quiz.count) { index in
+                            if(index % 2 == 1) {
+                                Image("\(self.quiz.items[index])")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 110, height: 90)
+                            }
+                        }
+                    }.padding(.leading, 20)
                 }
                 
                 NavigationLink(destination: ResultsView(quiz: self.$quiz)
                     .navigationBarTitle("")
                     .navigationBarHidden(true), isActive: self.$showResults) {
-                    Text("")
+                        Text("")
                 }.hidden()
                     .onAppear() {
                         self.turnTimerOn()
                         self.setTime()
                 }
+                
+            }.onReceive(self.timer) { _ in
+                self.timerLogic()
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)
-        }.onReceive(timer) { _ in
-            self.timerLogic()
-        }.border(Color.blue, width: 1)
+        }
+        .background(Color(0xd3995f))
+        .border(Color(0x663603), width: 3)
     }
 }
 

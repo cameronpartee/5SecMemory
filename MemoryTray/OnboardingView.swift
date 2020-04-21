@@ -7,17 +7,13 @@ struct OnboardingView: View {
     
     var body: some View {
         ZStack {
-            Color.white.edgesIgnoringSafeArea(.all)
-            VStack(spacing: 30) {
-                Image("m").offset(y: 50)
+            Color(0xd3995f).edgesIgnoringSafeArea(.all)
+            VStack(spacing: 90) {
+                Image("icon")
                 GeometryReader { gr in
                     HStack {
                         VStack(spacing: 40) {
-                            Image("bee")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                            
-                            Text("Memory Tray will measure how you soak in￼ information and how you apply information!")
+                            Text("The Memory Game will measure your ability too memorize and recall information.")
                                 .bold()
                                 .padding()
                                 .foregroundColor(Color.black)
@@ -26,11 +22,7 @@ struct OnboardingView: View {
                         }.frame(width: gr.frame(in: .global).width)
                         
                         VStack(spacing: 40) {
-                            Image("Monkey")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                            
-                            Text("Design your assesment by choosing a category and an amount.")
+                            Text("Design your assesment by setting a  timer and choosing an amount.")
                                 .bold()
                                 .padding()
                                 .foregroundColor(Color.black)
@@ -39,11 +31,7 @@ struct OnboardingView: View {
                         }.frame(width: gr.frame(in: .global).width)
                         
                         VStack(spacing: 40) {
-                            Image("people")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                            
-                            Text("To begin click continue. Have fun and don’t forget to use your brain!￼￼￼￼￼￼")
+                            Text("Make sure to check out the scoring  break down to see where you fall on the scale.")
                                 .bold()
                                 .padding()
                                 .foregroundColor(Color.black)
@@ -59,9 +47,7 @@ struct OnboardingView: View {
                     .frame(maxHeight: .infinity)
                     .offset(x: self.step == 1 ? gr.frame(in: .global).width : self.step == 2 ? 0 : -gr.frame(in: .global).width)
                     .animation(Animation.interpolatingSpring(stiffness: 40, damping: 8))
-                    .offset(y: 60)
                 }
-                
                 
                 NavigationLink(destination: QuizView()
                     .navigationBarTitle("")

@@ -18,6 +18,7 @@
 		2A2DC6EB2444F6F900C721E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DC6E92444F6F900C721E4 /* LaunchScreen.storyboard */; };
 		2A2DC6F32444FA8E00C721E4 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DC6F22444FA8E00C721E4 /* Data.swift */; };
 		2A2DC6F52445252300C721E4 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DC6F42445252300C721E4 /* ResultsView.swift */; };
+		2AA6A8CB244EB18400515BCC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6A8CA244EB18400515BCC /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		2A2DC6EC2444F6F900C721E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A2DC6F22444FA8E00C721E4 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		2A2DC6F42445252300C721E4 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		2AA6A8CA244EB18400515BCC /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				2A00C746244D314500EE1DC6 /* QuizView.swift */,
 				2A2DC6F42445252300C721E4 /* ResultsView.swift */,
 				2A00C740244D22E000EE1DC6 /* StarView.swift */,
+				2AA6A8CA244EB18400515BCC /* ColorExtension.swift */,
 				2A2DC6E42444F6F900C721E4 /* Assets.xcassets */,
 				2A2DC6E92444F6F900C721E4 /* LaunchScreen.storyboard */,
 				2A2DC6EC2444F6F900C721E4 /* Info.plist */,
@@ -164,6 +167,7 @@
 				2A2DC6DF2444F6F700C721E4 /* AppDelegate.swift in Sources */,
 				2A2DC6E12444F6F700C721E4 /* SceneDelegate.swift in Sources */,
 				2A2DC6E32444F6F700C721E4 /* ContentView.swift in Sources */,
+				2AA6A8CB244EB18400515BCC /* ColorExtension.swift in Sources */,
 				2A2DC6F52445252300C721E4 /* ResultsView.swift in Sources */,
 				2A00C741244D22E000EE1DC6 /* StarView.swift in Sources */,
 				2A00C747244D314500EE1DC6 /* QuizView.swift in Sources */,
