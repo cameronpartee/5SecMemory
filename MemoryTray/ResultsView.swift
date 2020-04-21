@@ -16,8 +16,8 @@ struct ResultsView: View {
     
     func getInputText() {
         let text = inputText
-        let textArray = text.split(separator: " ")
-        quiz.computerScore(a: textArray, count: quiz.count)
+        //let textArray = text.split(separator: " ")
+        //quiz.computerScore(a: textArray, count: quiz.count)
         print(quiz.points)
     }
     
@@ -36,11 +36,11 @@ struct ResultsView: View {
             
             TextField("Enter text here", text: $inputText).font(.system(size: 30))
                 .padding()
-                .border(Color.blue, width: 1)
+                .border(Color.black, width: 1)
             Text("Submit Quiz")
                 .font(.system(size: 30))
                 .padding()
-                .border(Color.blue, width: 1)
+                .border(Color.black, width: 1)
                 .onTapGesture {
                     self.getInputText()
                     self.showUIElements()
@@ -49,7 +49,7 @@ struct ResultsView: View {
             Text("Play Again")
                 .font(.system(size: 30))
                 .padding()
-                .border(Color.blue, width: 1)
+                .border(Color.black, width: 1)
                 .padding()
                 .onTapGesture {
                     // reset the points and dismiss
