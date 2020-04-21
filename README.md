@@ -1,4 +1,4 @@
-# The Memory Game
+# MemoryGame
 
 🍉 Memory game application that measures ability to recall information
 
