@@ -38,7 +38,7 @@ struct OnboardingView: View {
                         }.frame(width: gr.frame(in: .global).width)
                         
                         VStack(spacing: 40) {
-                            Text("The goal is to get as close to 100 points as possible to have a perfect memory.")
+                            Text("Do your best to spell the items correctly. The goal is to get as close to 100 points as possible.")
                                 .bold()
                                 .padding()
                                 .foregroundColor(Color.black)
