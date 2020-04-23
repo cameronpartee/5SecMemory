@@ -7,6 +7,7 @@ struct ResultsView: View {
     @State private var rotateAmount = 0
     @State private var showElements = false
     @State private var showStar = false
+    @State private var playCount = UserDefaults.standard.integer(forKey: "count")
     @Binding var quiz: Quiz
     @Binding var filter: Filter
     
@@ -48,10 +49,13 @@ struct ResultsView: View {
                     .border(Color(0x663603), width: 3)
                     .padding()
                     .onTapGesture {
-                        // reset points, dismiss and show review
                         self.quiz.points = 0
+                        self.playCount += 1
+                        UserDefaults.standard.set(self.playCount, forKey: "count")
                         self.presentationMode.wrappedValue.dismiss()
-                        SKStoreReviewController.requestReview()
+                        if(self.playCount % 3 == 0) {
+                          SKStoreReviewController.requestReview()
+                        }
                 }.opacity(self.showElements ? 1 : 0)
                 
                 Spacer()
