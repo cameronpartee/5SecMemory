@@ -1,4 +1,5 @@
 import SwiftUI
+import StoreKit
 
 struct ResultsView: View {
     
@@ -47,9 +48,10 @@ struct ResultsView: View {
                     .border(Color(0x663603), width: 3)
                     .padding()
                     .onTapGesture {
-                        // reset the points and dismiss
+                        // reset points, dismiss and show review
                         self.quiz.points = 0
                         self.presentationMode.wrappedValue.dismiss()
+                        SKStoreReviewController.requestReview()
                 }.opacity(self.showElements ? 1 : 0)
                 
                 Spacer()
