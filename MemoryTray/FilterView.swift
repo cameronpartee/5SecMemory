@@ -65,8 +65,6 @@ struct FilterView: View {
                     }
                 }
             }
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
         }
         .background(Color(0xd3995f))
         .border(Color(0x663603), width: 3)

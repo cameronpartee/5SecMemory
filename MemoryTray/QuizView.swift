@@ -8,6 +8,9 @@ struct QuizView: View {
     @State private var showResults = false
     @Binding var filter: Filter
     
+    // needed to dismiss view
+    @Environment(\.presentationMode) var presentationMode
+    
     let timer = Timer.publish(every: 1, on: .main, in: .default).autoconnect()
     
     func timerLogic() {
@@ -21,9 +24,18 @@ struct QuizView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                
-                Text("\(self.totalTime).00")
-                    .font(.system(size: 60))
+                VStack {
+                    Text("\(self.totalTime).00")
+                        .font(.system(size: 60))
+                    Text("Reset Game")
+                        .bold()
+                        .font(.system(size: 15))
+                        .foregroundColor(Color.blue)
+                        .onTapGesture {
+                            // dismiss view
+                            self.presentationMode.wrappedValue.dismiss()
+                    }
+                }
                 HStack {
                     VStack {
                         ForEach(0..<Int(self.filter.countFilter)) { index in
@@ -46,6 +58,7 @@ struct QuizView: View {
                         }
                     }.padding(.leading, 20)
                 }
+                
                 NavigationLink(destination: ResultsView(quiz: self.$quiz, filter: self.$filter).navigationBarTitle("")
                     .navigationBarHidden(true)
                 ,isActive: self.$showResults) {
@@ -59,8 +72,6 @@ struct QuizView: View {
             .onReceive(self.timer) { _ in
                 self.timerLogic()
             }
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
         }
         .background(Color(0xd3995f))
         .border(Color(0x663603), width: 3)
@@ -69,6 +80,6 @@ struct QuizView: View {
 
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizView(filter: .constant(Filter(timeFilter: 9.0, countFilter: 10.0)))
+        QuizView(filter: .constant(Filter(timeFilter: 9.0, countFilter: 14.0)))
     }
 }

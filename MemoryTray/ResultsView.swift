@@ -49,7 +49,6 @@ struct ResultsView: View {
                     .onTapGesture {
                         // reset the points and dismiss
                         self.quiz.points = 0
-                        //self.showFilter = true
                         self.presentationMode.wrappedValue.dismiss()
                 }.opacity(self.showElements ? 1 : 0)
                 

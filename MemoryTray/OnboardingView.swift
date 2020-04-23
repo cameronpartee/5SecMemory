@@ -29,7 +29,7 @@ struct OnboardingView: View {
                         }.frame(width: gr.frame(in: .global).width)
                         
                         VStack(spacing: 40) {
-                            Text("Design your assesment by setting a timer and choosing an amount.")
+                            Text("Design your game by setting a timer and choosing an amount of objects.")
                                 .bold()
                                 .padding()
                                 .foregroundColor(Color.black)
@@ -38,7 +38,7 @@ struct OnboardingView: View {
                         }.frame(width: gr.frame(in: .global).width)
                         
                         VStack(spacing: 40) {
-                            Text("Do your best to spell the items correctly. The goal is to get as close to 100 points as possible.")
+                            Text("Do your best to spell the items correctly. You will not be penalized for incorrect answer, only rewarded for correct ones.")
                                 .bold()
                                 .padding()
                                 .foregroundColor(Color.black)
