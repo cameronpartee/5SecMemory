@@ -4,7 +4,7 @@ import Foundation
 struct Quiz {
 
     var points: Int
-    var items = ["Gorilla", "Cow", "Cherry", "Elephant", "Lemon", "Lion", "Apple", "Kangaroo", "Snail", "Watermelon", "Pig", "Strawberry", "Snake", "Mango"]
+    var items = ["Gorilla", "Cow", "Cherry", "Elephant", "Lemon", "Lion", "Apple", "Kangaroo", "Snail", "Watermelon"]
     
     mutating func computerScore(a: [String.SubSequence], count: Int) {
         for i in a {

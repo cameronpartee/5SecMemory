@@ -20,24 +20,24 @@ struct ResultsView: View {
     
     func getInputText() {
         let text = inputText
-        let textArray = text.split(separator: " ")
-        quiz.computerScore(a: textArray, count: Int(filter.countFilter))
+        //let textArray = text.split(separator: " ")
+        //quiz.computerScore(a: textArray, count: Int(filter.countFilter))
         print(quiz.points)
     }
     
     var body: some View {
         GeometryReader { geometry in
+            //Color(0xd3995f).edgesIgnoringSafeArea(.all)
             VStack {
-                
                 TextField("Submit answer", text: self.$inputText).font(.system(size: 30))
                     .padding()
-                    .border(Color(0x663603), width: 3)
+                    .border(Color.blue, width: 2)
                     .accentColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                     .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                 Text("Calculate Score")
                     .font(.system(size: 30))
                     .padding()
-                    .border(Color(0x663603), width: 3)
+                    .border(Color.blue, width: 2)
                     .onTapGesture {
                         self.getInputText()
                         self.showUIElements()
@@ -46,7 +46,7 @@ struct ResultsView: View {
                 Text("Play Again")
                     .font(.system(size: 30))
                     .padding()
-                    .border(Color(0x663603), width: 3)
+                    .border(Color.blue, width: 2)
                     .padding()
                     .onTapGesture {
                         self.quiz.points = 0
@@ -90,9 +90,7 @@ struct ResultsView: View {
                     }.opacity(self.showElements ? 1 : 0)
                 }.offset(y: -50)
             }
-        }.background(Color(0xd3995f))
-            .border(Color(0x663603), width: 6)
-        
+        }        
     }
 }
 

@@ -7,7 +7,7 @@ struct Filter {
 
 struct ContentView: View {
     
-    @State private var filter = Filter(timeFilter: 10.0, countFilter: 10.0)
+    @State private var filter = Filter(timeFilter: 5.0, countFilter: 8.0)
     
     var body: some View {
         NavigationView {

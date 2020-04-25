@@ -8,40 +8,57 @@ struct OnboardingView: View {
     
     var body: some View {
         ZStack {
-            Color(0xd3995f).edgesIgnoringSafeArea(.all)
+            Color(0xf09ab0).edgesIgnoringSafeArea(.all)
             VStack(spacing: 90) {
-                Image("icon")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 250, height: 250)
-                    .padding()
-                    .offset(y: 30)
+                VStack(spacing: 0) {
+                    Text("5 Second Memory")
+                        .bold()
+                        .font(.system(size: 30))
+                        .foregroundColor(Color.white)
+                    Image("logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 90, height: 90)
+                }.offset(y: 30)
                 
                 GeometryReader { gr in
                     HStack {
-                        VStack(spacing: 40) {
-                            Text("The Memory Game will measure your ability too memorize and recall information.")
+                        VStack(spacing: 20) {
+                            Image("on1")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 130, height: 110)
+                            Text("Train your brain with a fun and fast paced game!")
                                 .bold()
+                                .font(.system(size: 30))
                                 .padding()
-                                .foregroundColor(Color.black)
+                                .foregroundColor(Color.white)
                                 .fixedSize(horizontal: false, vertical: true)
                                 .animation(Animation.interpolatingSpring(stiffness: 40, damping: 7).delay(0.1))
                         }.frame(width: gr.frame(in: .global).width)
                         
                         VStack(spacing: 40) {
-                            Text("Design your game by setting a timer and choosing an amount of objects.")
+                            Image("on2")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 130, height: 110)
+                            Text("The rules are simple. Memorize all eight items in five seconds. Test out each setting for optimal brain training! ")
                                 .bold()
                                 .padding()
-                                .foregroundColor(Color.black)
+                                .foregroundColor(Color.white)
                                 .fixedSize(horizontal: false, vertical: true)
                                 .animation(Animation.interpolatingSpring(stiffness: 40, damping: 7).delay(0.1))
                         }.frame(width: gr.frame(in: .global).width)
                         
                         VStack(spacing: 40) {
-                            Text("Do your best to spell the items correctly. You will not be penalized for incorrect answer, only rewarded for correct ones.")
+                            Image("on3")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 130, height: 110)
+                            Text("Do your best to spell each item correctly. Play 3 times a day to improve your memorization skills.")
                                 .bold()
                                 .padding()
-                                .foregroundColor(Color.black)
+                                .foregroundColor(Color.white)
                                 .fixedSize(horizontal: false, vertical: true)
                                 .animation(Animation.interpolatingSpring(stiffness: 40, damping: 7).delay(0.1))
                         }.frame(width: gr.frame(in: .global).width)
@@ -54,6 +71,7 @@ struct OnboardingView: View {
                     .frame(maxHeight: .infinity)
                     .offset(x: self.step == 1 ? gr.frame(in: .global).width : self.step == 2 ? 0 : -gr.frame(in: .global).width)
                     .animation(Animation.interpolatingSpring(stiffness: 40, damping: 8))
+                    .offset(y: 60)
                 }
                 
                 NavigationLink(destination: FilterView(filter: $filter)
@@ -83,19 +101,19 @@ struct OnboardingView: View {
                 HStack(spacing: 20) {
                     Button(action: {self.step = 1}) {
                         Image(systemName: "1.circle")
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.white)
                             .padding()
                             .scaleEffect(step == 1 ? 1 : 0.65)
                     }
                     Button(action: {self.step = 2}) {
                         Image(systemName: "2.circle")
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.white)
                             .padding()
                             .scaleEffect(step == 2 ? 1 : 0.65)
                     }
                     Button(action: {self.step = 3}) {
                         Image(systemName: "3.circle")
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.white)
                             .padding()
                             .scaleEffect(step == 3 ? 1 : 0.65)
                     }

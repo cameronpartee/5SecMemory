@@ -43,20 +43,20 @@ struct QuizView: View {
                                 Image("\(self.quiz.items[index])")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: 110, height: 90)
+                                    .frame(width: 150, height: 130)
                             }
                         }
-                    }.padding(.trailing, 20)
+                    }.padding(.trailing, 10)
                     VStack {
                         ForEach(0..<Int(self.filter.countFilter)) { index in
                             if(index % 2 == 1) {
                                 Image("\(self.quiz.items[index])")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: 110, height: 90)
+                                    .frame(width: 150, height: 130)
                             }
                         }
-                    }.padding(.leading, 20)
+                    }.padding(.leading, 10)
                 }
                 
                 NavigationLink(destination: ResultsView(quiz: self.$quiz, filter: self.$filter).navigationBarTitle("")
@@ -73,13 +73,11 @@ struct QuizView: View {
                 self.timerLogic()
             }
         }
-        .background(Color(0xd3995f))
-        .border(Color(0x663603), width: 3)
     }
 }
 
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizView(filter: .constant(Filter(timeFilter: 9.0, countFilter: 14.0)))
+        QuizView(filter: .constant(Filter(timeFilter: 5.0, countFilter: 8.0)))
     }
 }
