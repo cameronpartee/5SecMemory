@@ -20,8 +20,8 @@ struct ResultsView: View {
     
     func getInputText() {
         let text = inputText
-        //let textArray = text.split(separator: " ")
-        //quiz.computerScore(a: textArray, count: Int(filter.countFilter))
+        let textArray = text.split(separator: " ")
+        quiz.computerScore(a: textArray, count: Int(filter.countFilter))
         print(quiz.points)
     }
     

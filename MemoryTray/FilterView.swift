@@ -2,16 +2,23 @@ import SwiftUI
 
 struct FilterView: View {
     
-    @State var showResults = false
+    @State private var showResults = false
+    @State private var growIcon = true
     @Binding var filter: Filter
     
     var body: some View {
         GeometryReader { geometry in
-            VStack(alignment: .center, spacing: 100) {
+            VStack(alignment: .center, spacing: 80) {
                 Image("logo")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 80, height: 80)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 80, height: 80)
+                    .scaleEffect(self.growIcon ? 1 : 1)
+                    .animation(Animation.easeInOut(duration: 1)
+                        .repeatForever(autoreverses: true))
+                    .onAppear() {
+                        self.growIcon.toggle()
+                }
                 VStack(alignment: .center, spacing: 50) {
                     VStack(alignment: .center, spacing: 20) {
                         Text("How many items can you memorize?")

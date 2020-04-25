@@ -3,14 +3,15 @@ import SwiftUI
 struct OnboardingView: View {
     
     @State private var step = 1
-    @State var showResults = false
+    @State private var showResults = false
+    @State private var growIcon = true
     @Binding var filter: Filter
     
     var body: some View {
         ZStack {
-            Color(0xf09ab0).edgesIgnoringSafeArea(.all)
+            Color(0xF4BFCC).edgesIgnoringSafeArea(.all)
             VStack(spacing: 90) {
-                VStack(spacing: 0) {
+                VStack(spacing: 15) {
                     Text("5 Second Memory")
                         .bold()
                         .font(.system(size: 30))
@@ -19,9 +20,15 @@ struct OnboardingView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 90, height: 90)
-                }.offset(y: 30)
-                
-                GeometryReader { gr in
+                        .scaleEffect(self.growIcon ? 1.2 : 1)
+                        .animation(Animation.easeInOut(duration: 2)
+                            .repeatForever(autoreverses: true))
+                        .onAppear() {
+                            self.growIcon.toggle()
+                    }
+                    }.offset(y: 30)
+                    
+                    GeometryReader { gr in
                     HStack {
                         VStack(spacing: 20) {
                             Image("on1")
