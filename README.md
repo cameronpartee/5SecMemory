@@ -1,6 +1,6 @@
-# 5 Sec Memory
+# 5Sec Memory
 
-🧠 Train your brain with a fun and fast paced memory game!
+🧠 Welcome to 5 Sec Memory, memory brain training! Memorize as many items as you can and remember spelling counts.
 
 ![img](https://i.imgur.com/HaVotnUl.png)
 ![img](https://i.imgur.com/ZV9qKj2l.png)
