@@ -7,9 +7,9 @@ struct Slide: Identifiable {
 }
 
 struct Data {
-    var slides = [Slide(id: 1, ani: "9566-lightbulb-bouncing-and-blinking", text: "Train your brain in a fun way"),
-                  Slide(id: 2, ani: "10282-approval", text: "Memorize as many items as you can, spelling counts"),
-                  Slide(id: 3, ani: "13491-pop-new-year", text: "Modify the setting to your liking")]
+    var slides = [Slide(id: 1, ani: "9566-lightbulb-bouncing-and-blinking", text: "Welcome to 5 Sec Memory, memory brain training!"),
+                  Slide(id: 2, ani: "10282-approval", text: "Memorize as many items as you can and remember spelling counts"),
+                  Slide(id: 3, ani: "13491-pop-new-year", text: "Modify your setting to increase your training difficulty level")]
 }
 
 struct Filters {
