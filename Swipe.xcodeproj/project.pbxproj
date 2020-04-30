@@ -40,7 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2AB65467245928410009CC62 /* Swipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AB65467245928410009CC62 /* 5 Sec Memory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "5 Sec Memory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AB6546A245928410009CC62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AB6546C245928410009CC62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2AB6546E245928410009CC62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		2AB65468245928410009CC62 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2AB65467245928410009CC62 /* Swipe.app */,
+				2AB65467245928410009CC62 /* 5 Sec Memory.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 				2AC2CDC4245A137600B651A4 /* Lottie */,
 			);
 			productName = Swipe;
-			productReference = 2AB65467245928410009CC62 /* Swipe.app */;
+			productReference = 2AB65467245928410009CC62 /* 5 Sec Memory.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -394,9 +394,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameronpartee.Swipe;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "5 Sec Memory";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -414,9 +414,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameronpartee.Swipe;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "5 Sec Memory";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -20,7 +20,7 @@ struct Filters {
 struct Quiz {
 
     var points: Int
-    var items = ["apple", "butterfly", "giraffe", "hippopotamus", "knife", "heart", "cat", "shoe", "whale", "star", "dog"]
+    var items = ["apple", "butterfly", "giraffe", "hippopotamus", "knife", "heart", "cat", "shoe", "whale", "star", "dog", "pear", "pizza", "onion", "steak", "broccoli", "bacon"]
     
     mutating func computerScore(a: [String.SubSequence], count: Int) {
         for i in a {

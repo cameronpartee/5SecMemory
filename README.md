@@ -1,4 +1,4 @@
-# 5 sec Memory
+# 5 Sec Memory
 
 💡 Train your brain with a fun and fast paced memory game!
 
