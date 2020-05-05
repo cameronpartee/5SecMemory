@@ -9,6 +9,7 @@ struct AniView: UIViewRepresentable {
         let animation = Animation.named(text)
         aniView.animation = animation
         aniView.loopMode = .loop
+        aniView.backgroundBehavior = .pauseAndRestore
         aniView.play()
         return aniView
     }

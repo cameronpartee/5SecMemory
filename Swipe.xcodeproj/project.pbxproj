@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AA0C07C2462036B006774E5 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA0C07B2462036B006774E5 /* LogoView.swift */; };
 		2AB6546B245928410009CC62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB6546A245928410009CC62 /* AppDelegate.swift */; };
 		2AB6546D245928410009CC62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB6546C245928410009CC62 /* SceneDelegate.swift */; };
 		2AB6546F245928410009CC62 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB6546E245928410009CC62 /* ContentView.swift */; };
@@ -40,7 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2AB65467245928410009CC62 /* 5Sec Memory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "5Sec Memory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AA0C07B2462036B006774E5 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		2AB65467245928410009CC62 /* Memory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AB6546A245928410009CC62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AB6546C245928410009CC62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2AB6546E245928410009CC62 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,7 +98,7 @@
 		2AB65468245928410009CC62 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2AB65467245928410009CC62 /* 5Sec Memory.app */,
+				2AB65467245928410009CC62 /* Memory.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +111,7 @@
 				2AB6546A245928410009CC62 /* AppDelegate.swift */,
 				2AB6546C245928410009CC62 /* SceneDelegate.swift */,
 				2AB6546E245928410009CC62 /* ContentView.swift */,
+				2AA0C07B2462036B006774E5 /* LogoView.swift */,
 				2AC2CDDA245A29A900B651A4 /* PlayGameButton.swift */,
 				2AB6548024593E810009CC62 /* GameView.swift */,
 				2AC2CDE6245A5BAF00B651A4 /* GameTimer.swift */,
@@ -166,7 +169,7 @@
 				2AC2CDC4245A137600B651A4 /* Lottie */,
 			);
 			productName = Swipe;
-			productReference = 2AB65467245928410009CC62 /* 5Sec Memory.app */;
+			productReference = 2AB65467245928410009CC62 /* Memory.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -247,6 +250,7 @@
 				2AC2CDE3245A39A500B651A4 /* CountInput.swift in Sources */,
 				2AC2CDE9245A5D9D00B651A4 /* ResultsView.swift in Sources */,
 				2AC2CDED245A602100B651A4 /* ResultsText.swift in Sources */,
+				2AA0C07C2462036B006774E5 /* LogoView.swift in Sources */,
 				2AC2CDF3245A637E00B651A4 /* StarRow.swift in Sources */,
 				2AC2CDD7245A259800B651A4 /* Data.swift in Sources */,
 			);
@@ -316,7 +320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -370,7 +374,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -394,7 +398,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameronpartee.Swipe;
-				PRODUCT_NAME = "5Sec Memory";
+				PRODUCT_NAME = Memory;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -414,7 +418,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameronpartee.Swipe;
-				PRODUCT_NAME = "5Sec Memory";
+				PRODUCT_NAME = Memory;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

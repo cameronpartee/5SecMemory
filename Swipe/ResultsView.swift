@@ -25,12 +25,15 @@ struct ResultsView: View {
         ZStack { 
             Color(0xF4BFCC).edgesIgnoringSafeArea(.all)
             VStack {
-                TextField("Submit answer", text: self.$inputText).font(.system(size: 25))
+                TextField("TYPE ITEMS HERE..", text: self.$inputText).font(.system(size: 25))
                     .padding()
-                    .border(Color.black, width: 1)
+                    .border(Color(0xeb5082), width: 2)
+                    
                 ResultsText(text: "Calculate Score")
                     .onTapGesture {
                         self.getInputText()
+                        // Call to dismiss keyboard
+                        UIApplication.shared.endEditing()
                         self.showElements = true
                         self.rotateAmount += 180
                 }
@@ -68,5 +71,12 @@ struct ResultsView: View {
 struct ResultsView_Previews: PreviewProvider {
     static var previews: some View {
         ResultsView(quiz: .constant(Quiz(points: 0)), filter: .constant(Filters(timeFilter: 9.0, countFilter: 10.0)))
+    }
+}
+
+// extension for keyboard to dismiss
+extension UIApplication {
+    func endEditing() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

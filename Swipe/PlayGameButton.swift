@@ -12,11 +12,14 @@ struct PlayGameButton: View {
             }) {
                 HStack {
                     Text("Play Game")
-                        .font(.system(size: 20))
+                        .font(.system(size: 25))
                         .foregroundColor(Color.white)
                 }
-                .frame(width: 350, height: 40)
-                .background(Color.blue)
+                .frame(width: 300, height: 40)
+                .background(Color(0xeb5082))
+                .cornerRadius(50)
+            .shadow(color: Color(0xe20147), radius: 1, x: 2, y: 2)
+                
             }
         }
     }

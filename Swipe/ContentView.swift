@@ -9,8 +9,7 @@ struct ContentView: View {
             ZStack  {
                 Color(0xF4BFCC).edgesIgnoringSafeArea(.all)
                 VStack(spacing: 50) {
-                    Text("5 second Memory")
-                        .font(.system(size: 30))
+                    LogoView()
                     CarouselView()
                     VStack(spacing: 15) {
                         PlayGameButton(filter: $filters)
