@@ -1,6 +1,6 @@
 # 5Sec Memory
 
-🧠 Welcome to 5 Sec Memory, memory brain training! Memorize as many items as you can and remember spelling counts.
+Memory brain training! 
 
 ![img](https://media.giphy.com/media/hQFoHEqUlrDplhPuP6/giphy.gif)
 ![img](https://media.giphy.com/media/Zdgc3u8zhq2xJTiLXq/giphy.gif)
